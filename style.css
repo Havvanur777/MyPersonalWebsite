@@ -1,0 +1,189 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin:0;
+    padding:0;
+    font-family: 'Manrope', sans-serif;
+    color:#F4F4F4;
+    background-color:#121614;
+}
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    width:100%;
+    height:100px;
+    padding:0 40px;
+    background-color:#121614;
+    border-bottom:1px solid rgba(255,255,255,0.06);
+}
+
+.logoTitle{
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+    gap:12px;
+}
+
+.logo{
+    height:100px;
+    width:auto;
+    display:block;
+}
+
+.myName{
+  font-size: 30px;
+  font-weight:800;
+  line-height:1.1;
+  margin:0;
+  letter-spacing: 1px;
+  color:#F3F5F4;
+}
+
+.flag{
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    object-fit:cover;
+    box-shadow:0 0 0 2px rgba(255,255,255,0.12);
+}
+
+.navbar{
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    gap:14px;
+}
+
+nav a{
+    display:inline-block;
+    text-decoration:none;
+    color:#F3F5F4;
+    border-radius:18px;
+    cursor:pointer;
+    padding:10px 20px;
+    background-color:#2F3E2D;
+    border:1px solid rgba(255,255,255,0.06);
+    box-shadow:0 8px 24px #4E6B3C;
+    transition:background .2s ease, transform .12s ease, box-shadow .2s ease;
+}
+
+nav a:hover{
+    background-color:#4E6B3C;
+    box-shadow:0 8px 24px #2F3E2D;
+}
+
+.description{
+    width:100%;
+    height:80vh;
+    background-image:url("images/backgroundTreeHP.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position:relative;
+    z-index:0;
+}
+
+.photoLayer{
+    position:absolute;
+    width:100%;
+    background-color:rgba(0, 0, 0, 0.673);
+    inset:0;
+    z-index:1;
+}
+
+.descText{
+    position:absolute;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    padding:0 20%;
+    width:100%;
+    z-index:2;
+}
+
+.introTitle{
+    font-size:70px;
+    font-style:italic;
+    margin:0 0 10px 0;
+    text-align:center;
+}
+
+.proficient{
+    font-size:20px;
+    text-align:center;
+    margin:0 0 10px 0;
+}
+
+.desc{
+    font-size:15px;
+    text-align:center;
+    padding:0 20%;
+}
+
+.educationalInfo{
+    width:100%;
+    height:80vh;
+}
+
+.eduGrid{
+    margin:50px 0 50px 0;
+    padding:0 20%;
+    display: grid;
+    grid-template-columns: 2fr 2fr;   
+    grid-template-rows: auto auto;    
+    gap: 50px 60px;                   
+    grid-template-areas: 
+    "a b"
+    "c b";
+}
+
+.education{
+    grid-area:a;
+    padding:10px 20px;
+    background-color:#2F3E2D;
+    border:1px solid rgba(255,255,255,0.06);
+    border-radius:30px;
+    box-shadow:0 8px 24px #4E6B3C;
+}
+
+.expPhoto{
+    grid-area:c;
+    object-fit: cover;
+    padding:10px 20px;
+    background-color:#2F3E2D;
+    border:1px solid rgba(255,255,255,0.06);
+    border-radius:30px;
+    box-shadow:0 8px 24px #4E6B3C;
+}
+
+.experiences{
+    grid-area:b;
+    padding:10px 20px;
+    background-color:#2F3E2D;
+    border:1px solid rgba(255,255,255,0.06);
+    border-radius:30px;
+    box-shadow:0 8px 24px #4E6B3C;
+}
+
+@media screen and (max-width:768px){ /*mobile*/
+
+}
+
+@media screen and (max-width:1024px){ /*tablet*/
+    .myName{
+        font-size:18px;
+    }
+    nav a{
+        font-size:13px;
+    }
+}
+
+@media screen and (min-width:2560px){ /*4k*/
+
+}
