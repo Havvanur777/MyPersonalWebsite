@@ -1,10 +1,10 @@
 *{
     box-sizing: border-box;
+    margin:0;
+    padding:0;
 }
 
 body{
-    margin:0;
-    padding:0;
     font-family: 'Manrope', sans-serif;
     color:#F4F4F4;
     background-color:#121614;
@@ -15,10 +15,33 @@ header{
     justify-content:space-between;
     align-items:center;
     width:100%;
-    height:100px;
+    height:15vh;
     padding:0 40px;
     background-color:#121614;
-    border-bottom:1px solid rgba(255,255,255,0.06);
+}
+
+h1{
+    font-size:70px;
+    margin:0 0 10px 0;
+    font-size:800;
+}
+
+h2{
+    font-size:25px;
+    margin:0 0 10px 0;
+    font-size:500;
+}
+
+h3{
+    font-size:17px;
+    margin:0 0 10px 0;
+    font-size:400;
+}
+
+h4 , p{
+    font-size:15px;
+    margin:0 0 10px 0;
+    font-size:200;
 }
 
 .logoTitle{
@@ -35,20 +58,19 @@ header{
 }
 
 .myName{
-  font-size: 30px;
-  font-weight:800;
-  line-height:1.1;
-  margin:0;
-  letter-spacing: 1px;
-  color:#F3F5F4;
-}
+    font-size: 30px;
+    font-weight:800;
+    line-height:1.1;
+    letter-spacing: 1px;
+    color:#F3F5F4;
+    }
 
 .flag{
     width:30px;
     height:30px;
     border-radius:50%;
     object-fit:cover;
-    box-shadow:0 0 0 2px rgba(255,255,255,0.12);
+    box-shadow:0 0 0 1px rgba(255,255,255,0.12);
 }
 
 .navbar{
@@ -62,13 +84,12 @@ nav a{
     display:inline-block;
     text-decoration:none;
     color:#F3F5F4;
-    border-radius:18px;
+    border-radius:30px;
     cursor:pointer;
     padding:10px 20px;
     background-color:#2F3E2D;
     border:1px solid rgba(255,255,255,0.06);
     box-shadow:0 8px 24px #4E6B3C;
-    transition:background .2s ease, transform .12s ease, box-shadow .2s ease;
 }
 
 nav a:hover{
@@ -78,7 +99,7 @@ nav a:hover{
 
 .description{
     width:100%;
-    height:80vh;
+    height:70vh;
     background-image:url("images/backgroundTreeHP.jpeg");
     background-size: cover;
     background-position: center;
@@ -102,74 +123,175 @@ nav a:hover{
     justify-content:center;
     align-items:center;
     flex-direction:column;
+    text-align:center;
     padding:0 20%;
     width:100%;
     z-index:2;
 }
 
 .introTitle{
-    font-size:70px;
     font-style:italic;
-    margin:0 0 10px 0;
-    text-align:center;
-}
-
-.proficient{
-    font-size:20px;
-    text-align:center;
-    margin:0 0 10px 0;
-}
-
-.desc{
-    font-size:15px;
-    text-align:center;
-    padding:0 20%;
 }
 
 .educationalInfo{
     width:100%;
-    height:80vh;
+    height:70vh;
 }
 
-.eduGrid{
-    margin:50px 0 50px 0;
-    padding:0 20%;
-    display: grid;
-    grid-template-columns: 2fr 2fr;   
-    grid-template-rows: auto auto;    
+.gridEdu{
+    margin:10vh 0;
+    padding:0 10%;
+    display: grid;   
     gap: 50px 60px;                   
     grid-template-areas: 
     "a b"
     "c b";
 }
 
-.education{
-    grid-area:a;
-    padding:10px 20px;
+.gridEdu div{
+    padding:20px 20px;
     background-color:#2F3E2D;
     border:1px solid rgba(255,255,255,0.06);
     border-radius:30px;
     box-shadow:0 8px 24px #4E6B3C;
+}
+
+.education{
+    grid-area:a;
 }
 
 .expPhoto{
     grid-area:c;
-    object-fit: cover;
-    padding:10px 20px;
+}
+
+.experiences{
+    grid-area:b;
+}
+
+.activities{
+    width:100%;
+    height:50vh;
+}
+
+.gridActivity{
+    margin:10vh 0;
+    padding:0 10%;
+    display: grid; 
+    gap:50px 60px; 
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    grid-template-rows: auto 1fr;        
+    grid-template-areas:
+    "a a a"
+    "b c d";        
+}
+
+.sectionTitle{
+    grid-area:a;
+    text-align:center;
+}
+
+.gridActivity div{
+    padding:20px 20px;
     background-color:#2F3E2D;
     border:1px solid rgba(255,255,255,0.06);
     border-radius:30px;
     box-shadow:0 8px 24px #4E6B3C;
 }
 
-.experiences{
+.mentor{
     grid-area:b;
-    padding:10px 20px;
+}
+
+.gdg{
+    grid-area:c;
+}
+
+.ibm{
+    grid-area:d;
+}
+
+.gridExtras{
+    margin:10vh 0;
+    padding:0 10%;
+    display: grid;   
+    gap: 50px 60px;                   
+    grid-template-areas: 
+    "a b"
+    "c b";
+}
+
+.gridExtras div{
+    padding:20px 20px;
     background-color:#2F3E2D;
     border:1px solid rgba(255,255,255,0.06);
     border-radius:30px;
     box-shadow:0 8px 24px #4E6B3C;
 }
+
+.certificates{
+    grid-area:a;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.certificates a{
+    cursor:pointer;
+    border:2px solid #4E6B3C;
+    border-radius:30px;
+    text-decoration:none;
+    padding:10px 20px;
+    color:#F3F5F4;
+    background-color:#4E6B3C;
+}
+
+.certificates a:hover{
+    background-color:#2F3E2D;
+    box-shadow:0 8px 24px #4E6B3C;
+}
+
+.skills{
+    grid-area:b;
+}
+
+.gridSkills{
+    padding:0 10%;
+    display: grid;   
+    gap: 50px 60px;                   
+    grid-template-areas: 
+    "a a"
+    "b c"
+    "b d";
+}
+
+.gridSkills h2{
+    grid-area:a;
+}
+
+.computer{
+    grid-area:b;
+}
+
+.language{
+    grid-area:c;
+}
+
+.soft{
+    grid-area:d;
+}
+
+.interests{
+    grid-area:c;
+}
+
+span{
+    border-radius:30px;
+    padding:10px 20px;
+    background-color:#4E6B3C;
+}
+
+
 
 @media screen and (max-width:768px){ /*mobile*/
 
