@@ -73,64 +73,6 @@ h4, p {
     line-height: 1.5;
 }
 
-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    width:100%;
-    height:15vh;
-    padding: var(--spacing-md) var(--spacing-lg);
-    background-color: var(--primary-bg);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.logo{
-    display:flex;
-    justify-content:flex-start;
-    align-items:center;
-    gap: var(--spacing-sm);
-    height:300px;
-    width:auto;
-    display:block;
-}
-
-.navbar{
-    display:flex;
-    justify-content:flex-end;
-    align-items:center;
-    gap: var(--spacing-sm);
-}
-
-nav a{
-    display:inline-block;
-    text-decoration:none;
-    color: var(--text-secondary);
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    padding: var(--spacing-xs) var(--spacing-md);
-    background-color: var(--secondary-bg);
-    border: 1px solid var(--border-color);
-    box-shadow: 0 4px 12px var(--shadow-color);
-    transition: all 0.3s ease;
-    font-size: var(--font-xs);
-    font-weight: 500;
-}
-
-nav a:hover{
-    background-color: var(--accent-color);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px var(--shadow-color);
-}
-
-nav a.active {
-    background-color: var(--accent-color);
-    color: var(--text-primary);
-    font-weight: 600;
-}
-
 .description{
     width:100%;
     height:70vh;
@@ -415,18 +357,18 @@ nav a.active {
 }
 
 .computer h3 {
-    font-size: var(--font-xl);  /* Language ve Soft Skills ile aynı boyutta */
+    font-size: var(--font-xl);  
     font-weight: 600;
     margin-bottom: var(--spacing-sm);
     color: var(--text-secondary);
-    text-align: left; /* diğer başlıklarla aynı hizaya */
+    text-align: left; 
 }
 
 .computer .languages {
     display: flex;
-    flex-wrap: wrap; /* dar alanda alt satıra iner */
+    flex-wrap: wrap; 
     gap: var(--spacing-md);
-    justify-content: flex-start; /* sola yaslı ikonlar */
+    justify-content: flex-start; 
 }
 
 .computer img {
@@ -465,55 +407,41 @@ nav a.active {
     transform: scale(1.05);
 }
 
-footer {
-    min-height: 12vh;
-    background-color: var(--secondary-bg);
-    border-top: 1px solid var(--border-color);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: var(--spacing-md);
-    padding: var(--spacing-md);
+.referencecontact {
+    width: 100%;
+    padding: var(--spacing-xl) var(--spacing-lg);
+    background-color: rgba(47, 62, 45, 0.2);
     text-align: center;
+    margin-top: var(--spacing-xl);
 }
 
-footer h4 {
+.ref-container h2 {
+    font-size: var(--font-2xl);
+    color: var(--accent-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.ref-container p {
+    font-size: var(--font-md);
     color: var(--text-secondary);
-    font-size: var(--font-sm);
-    font-weight: 500;
+    margin-bottom: var(--spacing-lg);
 }
 
-.flag{
-    width:50px;
-    height:50px;
-    border-radius:50%;
-    background-color: var(--primary-bg);
-    object-fit:cover;
-    box-shadow: 0 0 0 1px var(--border-color);
-}
-
-.social-links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: var(--spacing-md);
-}
-
-.social-links a img {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
-    border-radius: 50%;
-    background-color: var(--primary-bg);
-    padding: 6px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px var(--shadow-color);
-}
-
-.social-links a img:hover {
+.contact-btn {
+    display: inline-block;
+    padding: var(--spacing-sm) var(--spacing-md);
     background-color: var(--accent-color);
-    transform: scale(1.1);
+    color: var(--primary-bg);
+    font-weight: 600;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+    background-color: var(--secondary-bg);
+    color: var(--text-primary);
+    transform: translateY(-2px);
 }
 
 @media screen and (max-width: 480px) {
@@ -526,17 +454,6 @@ footer h4 {
         --spacing-lg: 16px;
     }
 
-    header {
-        flex-direction: column;
-        height: auto;
-        padding: var(--spacing-sm);
-        gap: var(--spacing-sm);
-    }
-
-    .logo { height: 80px; }
-    .navbar { flex-wrap: wrap; justify-content: center; }
-    nav a { font-size: 0.7rem; padding: 4px 8px; }
-
     .description { height: 55vh; }
     .descText { padding: 0 4%; }
     .desc { font-size: var(--font-sm); }
@@ -546,35 +463,9 @@ footer h4 {
     .gridExtras { grid-template-columns: 1fr; padding: 0 4%; }
     .gridActivity { grid-template-areas: "title" "mentor" "gdg" "ibm"; }
     .gridExtras { grid-template-areas: "certificates" "skills" "interests"; }
-
-    footer h4 { font-size: var(--font-xs); }
-    .social-links a img { width: 36px; height: 36px; }
-    .flag{width:36px; height:36px;}
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
-    header { 
-        flex-direction: column; 
-        padding: var(--spacing-md); 
-        gap: var(--spacing-md);
-        height: auto;
-        min-height: auto;
-    }
-    
-    .logo { 
-        height: 120px; 
-    }
-    
-    .navbar { 
-        flex-wrap: wrap; 
-        justify-content: center;
-        width: 100%;
-    }
-    
-    nav a {
-        margin: 2px;
-    }
-    
     .description { 
         height: 60vh; 
     }
@@ -593,27 +484,9 @@ footer h4 {
         grid-template-columns: 1fr; 
         grid-template-areas: "certificates" "skills" "interests"; 
     }
-
-    .social-links a img { 
-        width: 50px; 
-        height: 50px; 
-    }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-    header {
-        height: auto;
-    }
-    
-    .logo { 
-        height: 160px; 
-    }
-    
-    nav a { 
-        font-size: var(--font-xs); 
-        padding: var(--spacing-xs) var(--spacing-sm); 
-    }
-
     .gridEdu { 
         grid-template-columns: 1fr; 
         grid-template-areas: "education" "experiences" "projects"; 
@@ -654,9 +527,6 @@ footer h4 {
         --spacing-xl: 70px;
     }
 
-    .logo { height: 220px; }
-    header { padding: var(--spacing-lg) var(--spacing-xl); }
-
     .gridEdu, 
     .gridActivity, 
     .gridExtras { 
@@ -677,8 +547,6 @@ footer h4 {
         width: 80px;
         height: 80px;
     }
-
-    .social-links a img , .flag{ width: 80px; height: 80px; }
 }
 
 .text-center {

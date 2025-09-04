@@ -4,21 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Css/homepage.css">
+    <link rel="stylesheet" href="../Css/headerFooter.css">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Libertinus+Serif+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <title>Havvanur Karakaya</title>
 </head>
 <body>
-    <header>
-        <img class="logo" src="../images/Havvanur Karakaya LOGO.png" alt="HK Havvanur Karakaya Logo">
-        <nav class="navbar">
-            <a href="homePage.html" class="active" >Home Page</a>
-            <a href="myProjects.html" >Projects</a>
-            <a href="certificates.html">Certificates</a>
-            <a href="contactWithMe.html" >Contact</a>
-        </nav>
-    </header>
+    <div id="header"></div>
 
     <section class="description" id="description">
         <div class="photoLayer"></div>
@@ -144,23 +137,15 @@
     </section>
     
     <section class="referencecontact" id="referencecontact">
-
+        <div class="ref-container">
+            <h2>References</h2>
+            <p>If you would like to reach my references, please contact me directly.</p>
+            <a href="contactWithMe.html" class="contact-btn">Contact Me</a>
+        </div>
     </section>
 
-    <footer>
-        <h4>@2025 Havvanur Karakaya</h4>
-        <img class="flag" src="../images/turkish flag.png" alt="Türk Bayrağı">
-        <div class="social-links">
-            <a class="LinkedIn" href="https://www.linkedin.com/in/havvanurkarakaya/" target="_blank">
-                <img class="iconLink" src="../images/linkedin.png" alt="LinkedIn">
-            </a>
-            <a class="GitHub" href="https://github.com/Havvanur777" target="_blank">
-                <img class="iconGit" src="../images/github (2).png" alt="GitHub">
-            </a>
-            <a class="Instagram" href="https://www.instagram.com/havvanurk7?igsh=MWdiaHJ6amk0NmpibA==" target="_blank">
-                <img class="iconIns" src="../images/instagram.png" alt="Instagram">
-            </a>
-        </div>
-    </footer>
+    <div id="footer"></div>
+
+    <script src="../Js/layout.js"></script>
 </body>
 </html>

@@ -24,11 +24,6 @@
 
     --border-radius: 30px;
     --border-radius-sm: 15px;
-
-    --mobile-max: 768px;
-    --tablet-max: 1024px;
-    --desktop-min: 1025px;
-    --large-desktop-min: 2560px;
 }
 
 * {
@@ -72,64 +67,6 @@ h4, p {
     line-height: 1.5;
 }
 
-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    width:100%;
-    height:15vh;
-    padding: var(--spacing-md) var(--spacing-lg);
-    background-color: var(--primary-bg);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.logo{
-    display:flex;
-    justify-content:flex-start;
-    align-items:center;
-    gap: var(--spacing-sm);
-    height:300px;
-    width:auto;
-    display:block;
-}
-
-.navbar{
-    display:flex;
-    justify-content:flex-end;
-    align-items:center;
-    gap: var(--spacing-sm);
-}
-
-nav a{
-    display:inline-block;
-    text-decoration:none;
-    color: var(--text-secondary);
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    padding: var(--spacing-xs) var(--spacing-md);
-    background-color: var(--secondary-bg);
-    border: 1px solid var(--border-color);
-    box-shadow: 0 4px 12px var(--shadow-color);
-    transition: all 0.3s ease;
-    font-size: var(--font-xs);
-    font-weight: 500;
-}
-
-nav a:hover{
-    background-color: var(--accent-color);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px var(--shadow-color);
-}
-
-nav a.active {
-    background-color: var(--accent-color);
-    color: var(--text-primary);
-    font-weight: 600;
-}
-
 .mainTitleCert{
     display:flex;
     justify-content: center;
@@ -144,7 +81,7 @@ nav a.active {
 .success, .participation {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: var(--spacing-lg);
     padding: var(--spacing-lg);
 }
 
@@ -199,150 +136,71 @@ nav a.active {
     margin-bottom: var(--spacing-xs);
 }
 
-footer {
-    min-height: 12vh;
-    background-color: var(--secondary-bg);
-    border-top: 1px solid var(--border-color);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: var(--spacing-md);
-    padding: var(--spacing-md);
-    text-align: center;
+.image-popup {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
 }
 
-footer h4 {
-    color: var(--text-secondary);
-    font-size: var(--font-sm);
-    font-weight: 500;
+.image-popup img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: var(--border-radius-sm);
+  box-shadow: 0 4px 12px var(--shadow-color);
+  animation: zoomIn 0.3s ease;
 }
 
-.flag{
-    width:50px;
-    height:50px;
-    border-radius:50%;
-    background-color: var(--primary-bg);
-    object-fit:cover;
-    box-shadow: 0 0 0 1px var(--border-color);
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
 
-.social-links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: var(--spacing-md);
-}
-
-.social-links a img {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
-    border-radius: 50%;
-    background-color: var(--primary-bg);
-    padding: 6px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px var(--shadow-color);
-}
-
-.social-links a img:hover {
-    background-color: var(--accent-color);
-    transform: scale(1.1);
+.image-popup.show {
+  display: flex;
 }
 
 @media screen and (max-width: 480px) {
     :root {
-    --font-3xl: 32px;
-    --font-2xl: 28px;
-    --spacing-xs: 4px;
-    --spacing-sm: 8px;
-    --spacing-md: 12px;
-    --spacing-lg: 20px;
-    --spacing-xl: 30px;
+        --font-3xl: 32px;
+        --font-2xl: 28px;
+        --spacing-xs: 4px;
+        --spacing-sm: 8px;
+        --spacing-md: 12px;
+        --spacing-lg: 20px;
+        --spacing-xl: 30px;
     }
-
-    header {
-        flex-direction: column;
-        height: auto;
-        padding: var(--spacing-sm);
-        gap: var(--spacing-sm);
-    }
-
-    .logo { height: 80px; }
-    .navbar { flex-wrap: wrap; justify-content: center; }
-    nav a { font-size: 0.7rem; padding: 4px 8px; }
 
     .mainTitleCert { font-size: var(--font-xl); margin: var(--spacing-lg) 0; }
     .success, .participation { grid-template-columns: 1fr; }
-
-    footer h4 { font-size: var(--font-xs); }
-    .social-links a img { width: 36px; height: 36px; }
-    .flag{width:36px; height:36px;}
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
-    header { 
-        flex-direction: column; 
-        padding: var(--spacing-md); 
-        gap: var(--spacing-md);
-        height: auto;
-        min-height: auto;
-    }
-    
-    .logo { 
-        height: 120px; 
-    }
-    
-    .navbar { 
-        flex-wrap: wrap; 
-        justify-content: center;
-        width: 100%;
-    }
-    
-    nav a {
-        margin: 2px;
-    }
-
     .success, .participation { grid-template-columns: repeat(2, 1fr); }
-
-    .social-links a img { width: 50px; height: 50px; }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-    header {
-        height: auto;
-    }
-    
-    .logo { 
-        height: 160px; 
-    }
-    
-    nav a { 
-        font-size: var(--font-xs); 
-        padding: var(--spacing-xs) var(--spacing-sm); 
-    }
-
     .success, .participation { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media screen and (min-width: 2560px) {
-    .logo { height: 220px; }
-    header { padding: var(--spacing-lg) var(--spacing-xl); }
-
     .success, .participation {
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--spacing-xl);
-    max-width: 2400px;
-    margin: 0 auto;
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--spacing-xl);
+        max-width: 2400px;
+        margin: 0 auto;
     }
     .success img, .participation img {
-    height: 300px;
-    max-width: 400px;
+        height: 300px;
+        max-width: 400px;
     }
-    
-    .social-links a img , .flag{ width: 80px; height: 80px; }
 }
-
 
 .text-center { text-align: center; }
 .flex-center { display: flex; justify-content: center; align-items: center; }
