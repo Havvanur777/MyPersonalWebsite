@@ -72,7 +72,7 @@ h4, p {
     line-height: 1.5;
 }
 
-header {
+header{
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -86,43 +86,24 @@ header {
     border-bottom: 1px solid var(--border-color);
 }
 
-.logoTitle {
+.logo{
     display:flex;
     justify-content:flex-start;
     align-items:center;
     gap: var(--spacing-sm);
-}
-
-.logo {
-    height:100px;
+    height:300px;
     width:auto;
     display:block;
 }
 
-.myName {
-    font-size: var(--font-xl);
-    font-weight:800;
-    line-height:1.1;
-    letter-spacing: 1px;
-    color: var(--text-secondary);
-}
-
-.flag {
-    width:30px;
-    height:30px;
-    border-radius:50%;
-    object-fit:cover;
-    box-shadow: 0 0 0 1px var(--border-color);
-}
-
-.navbar {
+.navbar{
     display:flex;
     justify-content:flex-end;
     align-items:center;
     gap: var(--spacing-sm);
 }
 
-nav a {
+nav a{
     display:inline-block;
     text-decoration:none;
     color: var(--text-secondary);
@@ -137,10 +118,16 @@ nav a {
     font-weight: 500;
 }
 
-nav a:hover {
+nav a:hover{
     background-color: var(--accent-color);
     transform: translateY(-2px);
     box-shadow: 0 8px 24px var(--shadow-color);
+}
+
+nav a.active {
+    background-color: var(--accent-color);
+    color: var(--text-primary);
+    font-weight: 600;
 }
 
 .contactCard {
@@ -257,6 +244,15 @@ footer h4 {
     font-weight: 500;
 }
 
+.flag{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background-color: var(--primary-bg);
+    object-fit:cover;
+    box-shadow: 0 0 0 1px var(--border-color);
+}
+
 .social-links {
     display: flex;
     justify-content: center;
@@ -280,65 +276,96 @@ footer h4 {
     transform: scale(1.1);
 }
 
-@media (max-width: 1024px) {
-    header { padding: var(--spacing-sm) var(--spacing-md); }
-    .logo { height: 60px; }
-    .myName { font-size: var(--font-md); }
-    nav a { font-size: var(--font-xs); padding: var(--spacing-xs) var(--spacing-sm); }
-}
+@media screen and (max-width: 480px) {
+    :root {
+    --font-3xl: 32px;
+    --font-2xl: 28px;
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 12px;
+    --spacing-lg: 20px;
+    --spacing-xl: 30px;
+    }
 
-@media (max-width: 768px) {
     header {
         flex-direction: column;
-        gap: var(--spacing-md);
-        min-height: auto;
-        padding: var(--spacing-md);
-    }
-
-    .contactCard {
-        grid-template-columns: 1fr;
-    }
-
-    .logoTitle { order: 1; }
-    .navbar { order: 2; flex-wrap: wrap; justify-content: center; }
-
-    .logo { height: 50px; }
-    .myName { font-size: var(--font-lg); }
-
-    footer {
-        gap: var(--spacing-sm);
+        height: auto;
         padding: var(--spacing-sm);
-    }
-    .social-links { gap: var(--spacing-sm); }
-    .social-links a img { width: 28px; height: 28px; padding: 4px; }
-}
-
-@media (max-width: 480px) {
-    :root {
-        --font-3xl: 32px;  
-        --font-2xl: 28px; 
-        --spacing-xs: 4px;
-        --spacing-sm: 8px;
-        --spacing-md: 12px;
-        --spacing-lg: 20px;
-        --spacing-xl: 30px;
+        gap: var(--spacing-sm);
     }
 
-    .logoTitle {
-        flex-direction: column;
-        text-align: center;
-        gap: var(--spacing-xs);
-    }
+    .logo { height: 80px; }
+    .navbar { flex-wrap: wrap; justify-content: center; }
+    nav a { font-size: 0.7rem; padding: 4px 8px; }
 
-    .navbar { gap: var(--spacing-xs); }
-    nav a { font-size: 0.7rem; padding: 6px 12px; }
-
-    .mainTitleCert { font-size: var(--font-xl); margin: var(--spacing-lg) 0; }
-    .success, .participation { grid-template-columns: 1fr; }
+    .contactCard { grid-template-columns: 1fr; padding: var(--spacing-lg); gap: var(--spacing-md); }
 
     footer h4 { font-size: var(--font-xs); }
-    .social-links a img { width: 24px; height: 24px; }
+    .social-links a img { width: 36px; height: 36px; }
+    .flag{width:36px; height:36px;}
 }
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    header { 
+        flex-direction: column; 
+        padding: var(--spacing-md); 
+        gap: var(--spacing-md);
+        height: auto;
+        min-height: auto;
+    }
+    
+    .logo { 
+        height: 120px; 
+    }
+    
+    .navbar { 
+        flex-wrap: wrap; 
+        justify-content: center;
+        width: 100%;
+    }
+    
+    nav a {
+        margin: 2px;
+    }
+
+    .contactCard { grid-template-columns: 1fr; padding: var(--spacing-lg); }
+
+    .social-links a img { width: 50px; height: 50px; }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    header {
+        height: auto;
+    }
+    
+    .logo { 
+        height: 160px; 
+    }
+    
+    nav a { 
+        font-size: var(--font-xs); 
+        padding: var(--spacing-xs) var(--spacing-sm); 
+    }
+
+    .contactCard { grid-template-columns: 1fr 1fr; padding: var(--spacing-lg); gap: var(--spacing-lg); }
+}
+
+@media screen and (min-width: 2560px) {
+    .logo { height: 220px; }
+    header { padding: var(--spacing-lg) var(--spacing-xl); }
+
+    .contactCard {
+    grid-template-columns: 1fr 1fr;
+    max-width: 2200px;
+    gap: var(--spacing-xl);
+    margin: 0 auto;
+    }
+    .contactCard form input,
+    .contactCard form textarea { font-size: var(--font-md); padding: var(--spacing-md); }
+    
+    .social-links a img , .flag{ width: 80px; height: 80px; }
+}
+
 
 .text-center { text-align: center; }
 .flex-center { display: flex; justify-content: center; align-items: center; }
