@@ -67,6 +67,12 @@ h4, p {
     line-height: 1.5;
 }
 
+.certificate {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
 .mainTitleCert{
     display:flex;
     justify-content: center;
@@ -83,6 +89,8 @@ h4, p {
     grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-lg);
     padding: var(--spacing-lg);
+    max-width: 1400px; 
+    margin: 0 auto;
 }
 
 .success > div, 
@@ -114,9 +122,8 @@ h4, p {
 .success img, 
 .participation img {
     width: 100%;
-    max-width: 300px;
     height: 200px;
-    object-fit: contain;
+    object-fit: cover; 
     margin-bottom: var(--spacing-sm);
     background-color: var(--primary-bg);
     border-radius: var(--border-radius-sm);
@@ -126,44 +133,45 @@ h4, p {
 .success h3, .participation h3 {
     font-size: var(--font-sm);
     margin-bottom: var(--spacing-xs);
-    color: var(--text-secondary);
+    color: var(--text-secondary); 
+    font-weight: bold;
 }
 
 .success h2, .participation h2 {
     font-size: var(--font-md);
     font-weight: 600;
-    color: var(--accent-color);
+    color: var(--font-color); 
     margin-bottom: var(--spacing-xs);
 }
 
 .image-popup {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.8);
-  justify-content: center;
-  align-items: center;
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
 }
 
 .image-popup img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: var(--border-radius-sm);
-  box-shadow: 0 4px 12px var(--shadow-color);
-  animation: zoomIn 0.3s ease;
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: var(--border-radius-sm);
+    box-shadow: 0 4px 12px var(--shadow-color);
+    animation: zoomIn 0.3s ease;
 }
 
 @keyframes zoomIn {
-  from { transform: scale(0.8); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
 }
 
 .image-popup.show {
-  display: flex;
+    display: flex;
 }
 
 @media screen and (max-width: 480px) {
